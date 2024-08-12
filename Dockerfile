@@ -11,6 +11,6 @@ RUN curl -L https://storage.googleapis.com/tinkey/tinkey-${VERSION}.tar.gz \
 
 
 
-FROM gcr.io/distroless/java17-debian12
+FROM gcr.io/distroless/java17-debian12:debug
 COPY --from=downloader /src/tinkey_deploy.jar /app/tinkey.jar
 ENTRYPOINT ["/usr/bin/java", "-jar", "/app/tinkey.jar"]
